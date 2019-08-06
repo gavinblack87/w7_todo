@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To-Do</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <h1>ToDo's</h1>
+    <div id="app">
+      <form @submit="saveNewItem">
+        <input type="text" v-model='newItem'>
+        <input type="radio" name="priority" value="High" v-model='priority'>High
+        <input type="radio" name="priority" value="Low" v-model='priority'>Low
+        <input type="submit"/>
+      </form>
+        <ul>
+          <li v-for="item in items">
+            <span>{{ item.name }}</span>
+          </li>
+        </ul>
+    </div>
+
+  </body>
+</html>
